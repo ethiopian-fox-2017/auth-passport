@@ -1,18 +1,21 @@
 var express = require('express');
-var customer = require('../controller/customer')
+var customer = require('../controller/customer');
+var check = require("../helper/check.js");
 var router = express.Router();
 var passport = require('passport');
 var passportLocal = require('passport-local');
 var Strategy = passportLocal.Strategy;
 
 /* GET home page. */
-router.get('/', customer.findAll);
+router.get('/', check.verifyAdmin, customer.findAll);
 
-router.post('/', customer.create);
+router.get('/:id', check.verifyAdmin, customer.findOne);
 
-router.delete('/:memberid', customer.delete);
+router.post('/', check.verifyAdmin, customer.create);
 
-router.put('/:memberid', customer.update);
+router.delete('/:id', check.verifyAdmin, customer.delete);
+
+router.put('/:id', check.verify, customer.update);
 
 router.post('/signup', customer.signup);
 

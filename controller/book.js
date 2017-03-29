@@ -28,6 +28,18 @@ book.findAll = (req,res,next) => {
   });
 }
 
+book.findOne = (req,res,next) => {
+  Book.findOne({
+    _id:req.params.id
+  },(err,book) => {
+    if (err) {
+      res.send ('Book not found');
+    } else {
+      res.send (book);
+    }
+  })
+}
+
 book.update = (req,res,next) => {
   Book.findOneAndUpdate({
     isbn : req.params.isbn

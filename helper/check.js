@@ -1,5 +1,4 @@
 'use strict';
-var User = require('../models').User;
 var passHash = require('password-hash');
 var jwt = require('jsonwebtoken');
 require('dotenv').config();

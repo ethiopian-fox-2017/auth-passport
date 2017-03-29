@@ -8,20 +8,6 @@ require('dotenv').config();
 
 var customer = {}
 
-passport.use(new Strategy((username,password,callback) => {
-  Customer.findOne({username:username}, (error,user) => {
-    if(error || user == null){
-      callback('username not found')
-    } else {
-      if(password != null && passHash.verify(password, user.password)){
-        callback(null,user)
-      } else {
-        callback('invalid username or password')
-      }
-    }
-  })
-}));
-
 customer.create = (req,res,next) => {
   let password = passHash.generate(req.body.password);
   Customer.create({
@@ -43,11 +29,23 @@ customer.create = (req,res,next) => {
 }
 
 customer.findAll = (req,res,next) => {
-  Customer.find((err,customers) => {
+  Customer.find((err,members) => {
     if (err){
       res.send({error:err});
     } else {
-      res.send(customers);
+      res.send(members);
+    }
+  })
+}
+
+customer.findOne = (req,res,next) => {
+  Customer.findOne({
+    _id:req.params.id
+  },(err,member) => {
+    if (err) {
+      res.send ('Customer not found');
+    } else {
+      res.send (member);
     }
   })
 }
@@ -55,7 +53,7 @@ customer.findAll = (req,res,next) => {
 customer.update = (req,res,next) => {
   let password = passHash.generate(req.body.password);
   Customer.findOneAndUpdate({
-    memberid : req.params.memberid
+    _id : req.params.id
   },{
       "name"     : req.body.name,
       "memberid" : req.body.memberid,
@@ -75,7 +73,7 @@ customer.update = (req,res,next) => {
 }
 
 customer.delete = (req,res,next) => {
-  Customer.findOneAndRemove(req.params.memberid, (err,book) => {
+  Customer.findOneAndRemove(req.params.id, (err,member) => {
     if (err) {
       res.send ('Delete member failed');
     } else {

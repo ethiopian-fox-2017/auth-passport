@@ -1,14 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var book = require('../controller/book')
+var book = require('../controller/book');
+var check = require("../helper/check.js");
 
 /* GET home page. */
-router.get('/', book.findAll);
+router.get('/', check.verify, book.findAll);
 
-router.post('/', book.add);
+router.get('/:id', check.verify, book.findOne);
 
-router.delete('/:isbn', book.delete);
+router.post('/', check.verifyAdmin, book.add);
 
-router.put('/:isbn', book.update);
+router.delete('/:id', check.verifyAdmin, book.delete);
+
+router.put('/:id', check.verifyAdmin, book.update);
 
 module.exports = router;

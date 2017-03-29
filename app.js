@@ -1,8 +1,10 @@
 var express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var passHash = require('password-hash');
 var passport = require('passport');
 var passportLocal = require('passport-local');
 var Strategy = passportLocal.Strategy;
+var Customer = require('./models/customer');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/passport_crud')
 
@@ -23,9 +25,19 @@ app.use('/customers', customers);
 
 app.use(passport.initialize());
 
-// app.use('/', passport.authenticate('local',{ session: false }), function(req,res){
-//   res.send('alive')
-// })
+passport.use(new Strategy((username,password,callback) => {
+  Customer.findOne({username:username}, (error,user) => {
+    if(error || user == null){
+      callback('username not found')
+    } else {
+      if(password != null && passHash.verify(password, user.password)){
+        callback(null,user)
+      } else {
+        callback('invalid username or password')
+      }
+    }
+  })
+}));
 
 app.listen(3000)
 
