@@ -1,6 +1,6 @@
 # auth-passport
 
-### List of `users` routes:
+### List of users routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
@@ -10,7 +10,8 @@
 
 
 <br>
-### List of `books` routes:
+
+### List of books routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
@@ -21,7 +22,8 @@
 
 
 <br>
-### List of `customers` routes:
+
+### List of customers routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
@@ -32,7 +34,8 @@
 
 
 <br>
-### List of `transactions` routes:
+
+### List of transactions routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
