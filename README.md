@@ -43,10 +43,10 @@ Route | HTTP | Description
 ## Usage
 With only npm:
 
-> ```sh 
+```sh 
 npm install
 ```
 
-> `npm start` or `npm run dev`
+`npm start` or `npm run dev`
 
 Access the website via `http://localhost:3000` or API via `http://localhost:3000/api`.
