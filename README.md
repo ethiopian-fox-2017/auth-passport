@@ -1,6 +1,9 @@
-# mongoose-crud
+# auth-passport
 
-a simple library app demo with basic REST API using mongoose and mongodb database.
+a simple library app demo with basic REST API using:
+- database: mongodb via mongoose
+- authentication : passport
+- authorization : jsonwebtoken
 
 ## ROUTES
 
