@@ -43,7 +43,9 @@ Route | HTTP | Description
 ## Usage
 With only npm:
 
-> ```sh npm install```
+> ```sh 
+npm install
+```
 
 > `npm start` or `npm run dev`
 
