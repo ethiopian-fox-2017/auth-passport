@@ -23,8 +23,4 @@ methods.register = function (req,res,next) {
   })
 }
 
-methods.login = function (req,res,next) {
-
-}
-
 module.exports = methods
