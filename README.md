@@ -47,6 +47,8 @@ With only npm:
 npm install
 ```
 
-`npm start` or `npm run dev`
+```sh 
+npm start
+```
 
-Access the website via `http://localhost:3000` or API via `http://localhost:3000/api`.
+Access the website via `http://localhost:3000` 
