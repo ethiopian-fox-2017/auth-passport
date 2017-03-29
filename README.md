@@ -1,15 +1,16 @@
 # auth-passport
 
-### List of **users** routes:
+### List of `users` routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
-|`/users/signup` | POST | Sign up with new user info | :heavy_check_mark: | :heavy_check_mark: |
-|`/users/login` | POST | Login while get an access token based on credentials, if already registered in Database | :heavy_check_mark: | :heavy_check_mark: |
-|`/users/` | GET | Get all Users | :heavy_check_mark: | :x: |
+|`/users/signup` | POST | Sign up with a new user info | :heavy_check_mark: | :heavy_check_mark: |
+|`/users/login` | POST | Login and then get an access token based on credentials, if already registered in Database (register using /users/signup route) | :heavy_check_mark: | :heavy_check_mark: |
+|`/users/` | GET | Get all Users from Database | :heavy_check_mark: | :x: |
 
------
-### List of **books** routes:
+
+<br>
+### List of `books` routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
@@ -18,8 +19,9 @@
 |`/books/:bookId` | PUT | Update 1 book info | :heavy_check_mark: | :x: |
 |`/books/:bookId` | DELETE | Delete 1 book from Database | :heavy_check_mark: | :x: |
 
------
-### List of **customers** routes:
+
+<br>
+### List of `customers` routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
@@ -28,17 +30,20 @@
 |`/customers/:customerId` | PUT | Update 1 Customer info | :heavy_check_mark: | :x: |
 |`/customers/:customerId` | DELETE | Delete 1 Customer from Database | :heavy_check_mark: | :x: |
 
------
-### List of **transactions** routes:
+
+<br>
+### List of `transactions` routes:
 
 | Route | HTTP Method | Description | Admin Access | Member Access |
 |-------|-------------|-------------|:------------:|:-------------:|
 |`/transactions` | POST | Add new Transactions to Database | :heavy_check_mark: | :x: |
 |`/transactions` | GET | Get all Transactions from Database | :heavy_check_mark: | :x: |
 
+<br><br>
 :bulb: All HTTP Methods described above can be executed using a Chrome app named  [POSTMAN](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en).
 
 ------
+
 ### :rocket: Usage
 
 With only npm:
