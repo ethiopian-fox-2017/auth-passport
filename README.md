@@ -1,7 +1,7 @@
 # auth-passport
 
 a simple library app demo with basic REST API using:
-- database: mongodb via mongoose
+- database : mongodb via mongoose
 - authentication : passport
 - authorization : jsonwebtoken
 
@@ -43,7 +43,7 @@ Route | HTTP | Description
 ## Usage
 With only npm:
 
-> `npm install`
+> ```sh npm install```
 
 > `npm start` or `npm run dev`
 
