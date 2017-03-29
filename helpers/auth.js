@@ -14,7 +14,7 @@ module.exports = function (passport) {
             cb(null, false)
           }else{
             if (passwordHash.verify(password, user.password)) {
-              cb(null, user)
+              cb(null, {username : user.username})
             }else{
               cb(null, false)
             }

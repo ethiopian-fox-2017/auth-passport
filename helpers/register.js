@@ -3,7 +3,6 @@ var passwordHash = require('password-hash');
 var User = require('../models/user')
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy
-// require('dotenv').config()
 
 var methods = {}
 
