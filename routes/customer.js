@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router()
 const customerController = require('../controllers/customer-controller');
+const verifier = require('../helpers/jwt');
 
-router.post('/', customerController.createCustomer)
+router.post('/', verifier, customerController.createCustomer)
 
-router.get('/', customerController.getAllCustomer)
+router.get('/', verifier, customerController.getAllCustomer)
 
-router.put('/:id', customerController.updateCustomer)
+router.put('/:id', verifier, customerController.updateCustomer)
 
-router.delete('/:id', customerController.deleteCustomer)
+router.delete('/:id', verifier, customerController.deleteCustomer)
 
 
 

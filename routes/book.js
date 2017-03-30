@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router()
 const bookController = require('../controllers/book-controller');
+const verifier = require('../helpers/jwt');
 
-router.post('/', bookController.createBook)
+router.post('/', verifier, bookController.createBook)
 
-router.get('/', bookController.getAllBook)
+router.get('/', verifier, bookController.getAllBook)
 
-router.put('/:id', bookController.updateBook)
+router.put('/:id', verifier, bookController.updateBook)
 
-router.delete('/:id', bookController.deleteBook)
+router.delete('/:id', verifier, bookController.deleteBook)
 
 
 module.exports = router;

@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router()
 const userController = require('../controllers/user-controller');
-const dbUser = require('../models/user-model');
 const passport = require('passport');
 const verifier = require('../helpers/jwt');
 
